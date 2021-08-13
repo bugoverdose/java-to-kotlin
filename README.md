@@ -2,9 +2,9 @@
 
 ### 목표
 
+- Spring 어플리케이션들이 Java에서 Kotlin으로 넘어가고 있는 최신 트렌드에 대한 최소한의 이해
 - Java와 Kotlin 문법 비교
-- 왜 Spring 서버 개발을 코틀린으로 하는가에 대한 이해
-- Kotlin 입문에 도움이 되도록 만든 최소한의 예제 코드 제공
+- Kotlin에 관심이 있는 입문자들에게 도움이 되도록 만든 최소한의 예제 코드 제공
 - 소스 코드만으로도 어느정도 내용 이해되도록 주석으로 설명 달기
   <br></br>
 
@@ -24,8 +24,8 @@
 
 #### nullable 타입
 
-- Java : 참조 자료형 멤버변수들은 null이 디폴트 값. 주로 Optional을 활용. 모든 자료형이 null이 될 수는 있음. @Nullable도 지원되기는 함.
-- Kotlin : 모든 자료형에 대해 nullable 설정 가능. 때문에 safe call 등 null 값 체크 관련 기능이 많음
+- Java : 참조 자료형 멤버변수들은 null이 디폴트 값. 주로 Optional을 활용. 모든 자료형이 null이 될 수는 있음. @Nullable도 지원됨.
+- Kotlin : 모든 자료형에 대해 nullable 설정 가능. 때문에 safe call 등 null 값 체크 관련 기능이 많음.
 
 #### 생성자
 
@@ -57,8 +57,9 @@
 
 ### 정리
 
-1. Kotlin이라고 하면 안드로이드 개발, 함수형 프로그래밍만 생각하는 것이 일반적일 것. 하지만 Kotlin은 기본적으로 Java와 동일한 JVM 언어이므로 Java로 작성된 모든 코드들은 Kotlin으로 작성될 수 있다. 또한 높은 코드 가독성, null 값에 대한 다양한 처리 기능 등 다양한 기능을 통해 Java가 지닌 가장 큰 단점인 verbosity를 보완한다고 볼 수 있다.
+1. Kotlin이라고 하면 안드로이드 개발, 함수형 프로그래밍만 생각하는 것이 일반적일 것이다. 하지만 Kotlin은 기본적으로 Java와 동일한 JVM 언어이므로 Java로 작성된 모든 코드들은 Kotlin으로 작성될 수 있다. 실제로 IntelliJ에서 Java 코드를 .kt 파일에 붙여넣을 경우 Kotlin 코드로 자동 변환되며, Kotlin 코드도 자바로 변환하여 볼 수 있다(Tools > Kotlin > Show Kotlin Bytecode > Decompile).
+2. 현재 실무에서는 Java + Lombok 조합을 통해 코드 가독성과 생산성을 크게 개선하였다고는 하지만 이는 근본적인 해결책이 된다고 보기는 어려우며, 오히려 각 클래스의 구조에 대한 이해 없이 @Data를 남발하는 것은 지양해야 한다고 생각한다.
 
-2. 현재 실무에서는 Java + Lombok 조합을 통해 생산성을 크게 개선하였다고는 하지만 이는 근본적인 해결책이 되지 않는다고 보인다. 오히려 각종 클래스의 구조에 대한 이해 없이 @Data를 남발하게 되면 프로그램의 안정성이 감소할 것으로 생각됨. 또한 게터/세터를 무분별하게 자동생성하면 객체지향의 핵심요소 중 하나인 캡슐화를 어길 위험이 증가한다고 생각됨(final 키워드로 예방은 가능).
+3. 이에 반해 Kotlin은 다양한 측면에서 Java의 단점을 해결해준다고 볼 수 있다. 실제로 [SpringInitializr](https://start.spring.io/)은 Java와 Kotlin으로 Spring 프로젝트를 셋업해주며, Java 코드를 Kotlin 코드로 리팩토링하는 작업은 전세계적인 흐름으로 보인다.
 
-3. 서비스 로직 개발의 측면에서 Kotlin은 조건문에서 활용하기 용이한 각종 기능을 제공하기 때문에 높은 코드 가독성으로 안정성 높은 코드를 개발할 수 있도록 지원한다고 볼 수 있다. (물론 불필요한 scope function의 남발은 depth를 증가시키는 등 올바르지 못한 코틀린 코드는 오히려 자바 코드 이하의 코드 가독성을 지니게 될 수도 있다.) 실제로 Java 코드를 Kotlin 코드로 리팩토링하는 작업은 전세계적인 흐름으로 보임.
+4. 본격적으로 Kotlin에 입문하고 싶다면 [Kotlin 공식문서](https://kotlinlang.org/docs/home.html)와 [Kotlin in Action](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791161750712&orderClick=LEa&Kc=) 추천한다.
